@@ -162,7 +162,7 @@ ZEPHYR-ControlVault/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/<team-name>/ZEPHYR-ControlVault.git
+git clone https://github.com/leaderofARS/ZEPHYR-ControlVault.git
 ```
 
 ### 2. Open in IDE (VS Code / IntelliJ / Eclipse)
@@ -269,7 +269,7 @@ Potential improvements for the system:
 
 ## 📝 License
 
-This project is created for educational purposes as part of a Java OOP course.
+GNU public License
 
 ---
 
@@ -284,9 +284,7 @@ This project is created for educational purposes as part of a Java OOP course.
 ## 📧 Contact
 
 For any queries regarding this project:
-- **Member A (ARS)**: [email@example.com]
-- **Member B (Partner)**: [email@example.com]
-
+- **Member A (ARS)**: [abhayrshanbhag@hotmail.com]
 ---
 
 ## 🏁 Conclusion
