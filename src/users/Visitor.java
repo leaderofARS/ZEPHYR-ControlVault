@@ -2,18 +2,14 @@ package users;
 
 public class Visitor extends User {
 
-    // Visitor-specific fields
-    private int badgeValidity; 
-    // This represents how many times the visitor can access zones
-    // Actual decrement and expiry logic comes in later
+    private int badgeValidity; // remaining allowed accesses
 
-    // Constructor
     public Visitor(String userId, String username, String password, int badgeValidity) {
         super(userId, username, password, "VISITOR");
         this.badgeValidity = badgeValidity;
     }
 
-    // Getters & Setters
+    // Getter & Setter
     public int getBadgeValidity() {
         return badgeValidity;
     }
@@ -22,19 +18,28 @@ public class Visitor extends User {
         this.badgeValidity = badgeValidity;
     }
 
-    // Polymorphic Access Behavior
-    // Only placeholder (logic comes in Phase 2)
-    @Override
-    public void accessArea(String zone) {
-        // No actual access control yet
-        System.out.println("VISITOR " + username + " is attempting to access: " + zone);
-    }
 
-    // Placeholder for future logic
     public void decrementBadgeValidity() {
+        if (badgeValidity > 0) {
+            badgeValidity--;
+        }
     }
 
     public boolean isBadgeExpired() {
-        return false;
+        return badgeValidity <= 0;
+    }
+
+    // now production-ready)
+
+    @Override
+    public void accessArea(String zone) {
+        System.out.println("VISITOR " + username + " accessed: " + zone +
+                " | Remaining badge validity: " + badgeValidity);
+    }
+
+    @Override
+    public String toString() {
+        return "[VISITOR] " + username +
+                " (ID: " + userId + ", Badge: " + badgeValidity + ")";
     }
 }
