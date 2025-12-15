@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class AuthManager {
-
+    private FileHandler fileHandler = new FileHandler();
     private HashMap<String, User> userMap;
 
     public AuthManager() {
@@ -79,6 +79,11 @@ public class AuthManager {
     public void registerUser(User user) {
         userMap.put(user.getUsername(), user);
         // Member B will handle persistence writing
+        fileHandler.appendToFile("data/users.txt", user.serialize());
+
+        // 3. Optional: Confirmation
+        System.out.println("User '" + user.getUsername() + "' registered successfully and saved.");
+    }
     }
 
     public User getUser(String username) {
