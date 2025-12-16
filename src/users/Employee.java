@@ -15,10 +15,11 @@ public class Employee extends User {
 
     // Attendance hooks
     public String checkIn() {
-        return username + " checked in";
+        return userId + "," + username + ",CHECK_IN";
     }
 
     public String checkOut() {
-        return username + " checked out";
+        return userId + "," + username + ",CHECK_OUT";
     }
+
 }
