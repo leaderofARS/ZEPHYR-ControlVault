@@ -55,9 +55,7 @@ public class AuthManager {
         }
     }
 
-    // ----------------------------------------
     // Authentication
-    // ----------------------------------------
     public User login(String username, String password)
             throws InvalidCredentialsException {
 
@@ -74,17 +72,13 @@ public class AuthManager {
         return user;
     }
 
-    // ----------------------------------------
     // Admin-only registration
-    // ----------------------------------------
     public void registerUser(User user) {
         userMap.put(user.getUsername(), user);
         fileHandler.appendToFile(userFilePath, serializeUser(user));
     }
 
-    // ----------------------------------------
     // Helper
-    // ----------------------------------------
     public User getUser(String username) {
         return userMap.get(username);
     }
