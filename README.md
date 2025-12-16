@@ -1,105 +1,122 @@
 # ZEPHYR-ControlVault
-Zephyr ControlVault is a Java-based identity and facility access controller. It offers a cleanly abstracted user hierarchy, authentication manager, access policies, and automated activity logging backed by file storage.
 
-**Zephyr ControlVault** is a Java-based Identity and Access Management (IAM) system that simulates how modern enterprises manage secure facility access, user roles, authentication, and audit logging.
+Zephyr ControlVault is a Java-based Identity and Access Management (IAM) system that simulates how modern enterprises manage secure facility access, user roles, authentication, and audit logging.
 
-It demonstrates clean OOP principles, role-based access policies, user hierarchy modeling, exception handling, collections, and file-based persistence — making it a highly structured, real-world inspired mini-project.
-
----
+The project demonstrates clean Object-Oriented Programming (OOP) principles, role-based access control (RBAC), user hierarchy modeling, exception handling, collections, and file-based persistence — making it a structured, real-world inspired mini-project.
 
 ## 🚀 Project Overview
 
 Zephyr ControlVault manages three categories of users:
+
 - **Admin**
 - **Employee**
 - **Visitor**
 
-Each user type has unique permissions, access behaviors, and authenticated actions.
+Each user type has distinct permissions, access rules, and workflows.
 
-Every access attempt, login event, and workflow is recorded with timestamps to maintain a complete audit trail.
+All authentication events, access attempts, and attendance actions are recorded with timestamps to maintain a complete audit trail.
 
-This project goes far beyond a typical CRUD system, simulating how corporate environments enforce identity management and facility access control.
-
----
+This project goes beyond a basic CRUD system by simulating enterprise-style identity management and facility security enforcement.
 
 ## 🔍 Key Features
 
 ### ✅ 1. Multi-Role Authentication
-- Secure login system using username & password
-- Role-based object creation (Admin/Employee/Visitor)
-- Invalid credentials throw custom exceptions
+
+- Username/password-based login system
+- Role-based object creation (Admin / Employee / Visitor)
+- Invalid credentials handled via custom exceptions
 
 ### ✅ 2. Role-Based Access Control (RBAC)
-Different users have different privileges:
-- **Admin** → Full access to all zones
-- **Employee** → Office + Lab
-- **Visitor** → Lobby only (time-limited badge)
+
+| Role     | Allowed Access Zones                  |
+|----------|---------------------------------------|
+| Admin    | All zones                             |
+| Employee | Laboratory, Office Floor, Lobby       |
+| Visitor  | Lobby only (limited badge)            |
+
+Access violations raise domain-specific exceptions.
 
 ### ✅ 3. Facility Zone Access
-Simulated access areas:
-- Server Room (Admin only)
-- Laboratory
-- Office Floor
-- Lobby
 
-Polymorphism ensures each user behaves differently in the access flow.
+Simulated facility zones:
+
+- **SERVER_ROOM** (Admin only)
+- **LAB**
+- **OFFICE_FLOOR**
+- **LOBBY**
+
+Access behavior is enforced centrally and executed polymorphically.
 
 ### ✅ 4. Visitor Badge Management
-- Temporary access badge
-- Automatic expiry after limited uses/time
-- Custom `VisitorExpiredException` for expired badges
+
+- Visitors are issued temporary access badges
+- Badge validity decreases on each allowed access
+- Automatic expiry enforced
+- Expired badges raise `VisitorExpiredException`
 
 ### ✅ 5. Automated Logging System
-All events are logged with timestamps, stored in:
+
+All system events are logged with timestamps and severity levels.
+
+Logs are stored in:
 ```
 data/access_log.txt
 ```
 
-Includes:
-- Successful access
-- Denied access
-- Expired badges
-- Authentication events
+Sample log entries:
+```
+[2025-12-16 21:55:39] [INFO] Login successful for user: [ADMIN] admin (ID: ADM01)
+[2025-12-16 21:56:10] [WARN] [EMPLOYEE] emp denied access to SERVER_ROOM
+[2025-12-16 21:57:05] [ERROR] Failed login attempt: User not found
+```
 
 ### ✅ 6. Employee Attendance Tracking
+
 Employees can:
 - Check-in
 - Check-out
 
-Stored in:
+Attendance records are persisted in:
 ```
 data/attendance.txt
 ```
 
-### ✅ 7. File-Based Data Storage
-Persistent storage for:
-- Users
+Sample format:
+```
+2025-12-16T22:10:31,EMP01,emp,CHECK_IN
+2025-12-16T22:12:04,EMP01,emp,CHECK_OUT
+```
+
+### ✅ 7. File-Based Data Persistence
+
+Persistent storage is used for:
+- User records
 - Access logs
 - Attendance records
 
-### ✅ 8. Clean Console UI
-- Interactive menus
-- Input validation
-- Error handling
+This approach keeps the system lightweight while demonstrating real I/O handling.
 
----
+### ✅ 8. Clean Console Interface
+
+- Menu-driven interaction
+- Graceful error handling
+- Clear separation between UI and business logic
 
 ## 🧩 Tech Stack
 
 ### Language
-**Java (Core + OOP)**
+- Java (JDK 8+)
 
-### Concepts Used
+### Core Concepts Used
 - Inheritance, abstraction, polymorphism
 - Java Collections (HashMap, ArrayList)
-- Exception handling (custom + built-in)
-- File I/O (BufferedReader, BufferedWriter, FileWriter)
+- Custom and built-in exception handling
+- File I/O (BufferedReader, BufferedWriter)
 - Java Time API (LocalDateTime)
-- Modular system design
-
----
+- Modular, layered system design
 
 ## 🗂️ Project Structure
+
 ```
 ZEPHYR-ControlVault/
 │
@@ -132,31 +149,26 @@ ZEPHYR-ControlVault/
 └── README.md
 ```
 
----
-
 ## 👥 Team Members & Responsibilities
 
 ### Member A — ARS
 **Core Logic & OOP Architecture**
-- Designed User Hierarchy (User, Admin, Employee, Visitor)
-- Implemented Authentication System
-- Built Role-Based Access Engine
-- Developed Visitor Badge Expiry Logic
-- Implemented Custom Exceptions
-- Integrated Polymorphic Access Behavior
-- Reviewed PRs & tested core logic
+- Designed user hierarchy and inheritance model
+- Implemented authentication logic
+- Built role-based access control engine
+- Developed visitor badge expiry system
+- Created custom domain exceptions
+- Ensured clean separation of concerns
+- Reviewed PRs and tested core logic
 
 ### Member B — Partner
 **Persistence, Logging & UI**
-- Implemented FileHandler (persistent storage)
-- Developed LogManager (audit logging)
-- Created Attendance Tracking System
-- Built full Console UI and input validation
-- Implemented reporting features (logs & attendance)
-- Wrote README.md and collected screenshots
-- Reviewed PRs & tested I/O modules
-
----
+- Implemented file persistence via FileHandler
+- Developed audit logging system (LogManager)
+- Implemented attendance tracking
+- Built console UI and input validation
+- Integrated system modules
+- Documented the project and collected screenshots
 
 ## 💻 How to Run the Application
 
@@ -165,139 +177,72 @@ ZEPHYR-ControlVault/
 git clone https://github.com/leaderofARS/ZEPHYR-ControlVault.git
 ```
 
-### 2. Open in IDE (VS Code / IntelliJ / Eclipse)
-Ensure **JDK 8+** is installed.
-
-### 3. Run the Main File
-Navigate to:
+### 2. Compile the Project
+```bash
+javac -d out src/**/*.java
 ```
-src/main/Main.java
+
+### 3. Run the Application
+```bash
+java -cp out main.Main
 ```
-Run the file.
 
-### 4. System will start with login screen
-Admin credentials can be preloaded in `users.txt`.
-
----
-
-## 🧪 Sample Data Format
+## 🧪 Sample Data
 
 ### users.txt
 ```
 ADM01,admin,admin123,ADMIN
-EMP220,rahul123,pass456,EMPLOYEE
-VIS102,guest1,guestpass,VISITOR,3
+EMP01,emp,emp123,EMPLOYEE
+VIS01,guest,guest123,VISITOR,2
 ```
 
-### access_log.txt
-```
-[2025-12-07 14:22:10] ADMIN admin accessed Server Room - SUCCESS
-[2025-12-07 14:24:11] VISITOR vis102 tried Office Floor - DENIED (Expired)
-```
+## 🧠 Learning Outcomes
 
-### attendance.txt
-```
-[2025-12-07 09:00:15] EMPLOYEE rahul123 - CHECK IN
-[2025-12-07 18:30:42] EMPLOYEE rahul123 - CHECK OUT
-```
+Through this project, we implemented:
 
----
+- Object-oriented system design using inheritance and polymorphism
+- Key SOLID principles (Single Responsibility, Open/Closed)
+- Role-Based Access Control (RBAC)
+- Custom exception handling for security-related failures
+- File-based persistence and audit logging
+- Clean separation between UI, logic, and data layers
+- Collaborative Git workflow with feature branches and PR reviews
 
-## 📸 Screenshots
+## ⚠️ Limitations
 
-### Login Screen
-![Login Screen](screenshots/login.png)
+- File-based storage instead of a database
+- Console-based UI (no GUI)
+- Passwords stored in plain text (no hashing)
+- Single-user session simulation
 
-### Admin Dashboard
-![Admin Dashboard](screenshots/admin_dashboard.png)
-
-### Access Control in Action
-![Access Control](screenshots/access_control.png)
-
-### Audit Logs
-![Audit Logs](screenshots/audit_logs.png)
-
-### Attendance Tracking
-![Attendance](screenshots/attendance.png)
-
-*(Add actual screenshots to a `screenshots/` folder in your repository)*
-
----
-
-## 🧾 GitHub Collaboration Workflow
-
-- Both members cloned repo
-- Both worked on feature branches
-- Pull Requests reviewed mutually
-- Minimum 5 meaningful commits each
-- Final merge into main branch
-
-### Example branches:
-- `feature-auth-system`
-- `feature-ui-module`
-- `feature-logging`
-- `feature-attendance`
-- `feature-access-control`
-
----
-
-## 🎯 Learning Outcomes
-
-Through this project, we successfully implemented:
-- **Object-Oriented Design**: Clean class hierarchy with proper inheritance and polymorphism
-- **SOLID Principles**: Single responsibility, open/closed, and dependency inversion
-- **Exception Handling**: Custom exceptions for domain-specific errors
-- **File I/O Operations**: Persistent data storage and retrieval
-- **Security Concepts**: Authentication, authorization, and audit trails
-- **Team Collaboration**: Git workflow, code reviews, and task distribution
-
----
+These choices were intentional to focus on OOP design and system architecture.
 
 ## 🔮 Future Enhancements
 
-Potential improvements for the system:
-- Database integration (MySQL/PostgreSQL) instead of file storage
-- GUI implementation using JavaFX or Swing
+- Database integration (MySQL/PostgreSQL)
+- GUI using JavaFX or Swing
+- Password hashing and encryption
 - Multi-factor authentication (MFA)
-- Real-time access monitoring dashboard
-- Email notifications for security events
-- Biometric authentication simulation
-- Access card/RFID simulation
-- Advanced reporting and analytics
-
----
+- Real-time monitoring dashboard
+- Advanced analytics and reporting
+- RFID / access-card simulation
 
 ## 📝 License
 
-GNU public License
-
----
-
-## 🤝 Acknowledgments
-
-- Special thanks to our course instructor for guidance
-- Inspired by real-world IAM systems used in enterprise environments
-- Built with dedication and collaborative effort
-
----
-
-## 📧 Contact
-
-For any queries regarding this project:
-- **Member A (ARS)**: [abhayrshanbhag@hotmail.com]
----
+MIT License
 
 ## 🏁 Conclusion
 
-**Zephyr ControlVault** demonstrates:
-- Strong OOP design principles
-- Realistic access control modeling
-- Persistent data management
-- Clean modular architecture
-- Collaborative Git workflow
+Zephyr ControlVault demonstrates:
 
-This project reflects a professional-grade mini IAM system, far more advanced than typical beginner Java projects, showcasing our understanding of enterprise-level software design patterns and implementation.
+- Strong OOP foundations
+- Realistic access-control modeling
+- Persistent audit logging
+- Modular, maintainable architecture
+- Effective team collaboration using Git
+
+This project represents a professional-grade mini IAM system, significantly exceeding the scope of typical beginner Java projects.
 
 ---
 
-**⭐ If you found this project helpful, please consider giving it a star on GitHub!**
+⭐ **If you found this project helpful, consider giving it a star on GitHub.**
