@@ -1,5 +1,6 @@
 package system;
 
+import system.FileHandler;
 import users.*;
 import exceptions.InvalidCredentialsException;
 
