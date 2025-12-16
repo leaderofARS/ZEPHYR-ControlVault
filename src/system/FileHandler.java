@@ -13,7 +13,6 @@ public class FileHandler {
         }
     }
     public List<String> readFile(String path) {
-        // Placeholder
         ensureFile(path);
         List<String> lines = new ArrayList<>();
 
@@ -35,7 +34,6 @@ public class FileHandler {
 
     
     public void writeFile(String path, String content) {
-        // Placeholder
         ensureFile(path);
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
@@ -59,6 +57,7 @@ public class FileHandler {
         }
     }
     public void appendToFile(String path, String content) {
+        ensureFile(path);
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))) {
 
             bw.write(content);
