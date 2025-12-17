@@ -1,0 +1,3 @@
+ADM01,admin,admin123,ADMIN
+EMP01,emp,emp123,EMPLOYEE
+VIS01,guest,guest123,VISITOR,2

@@ -1,0 +1,25 @@
+[2025-12-16 21:55:39] [ERROR] Failed login attempt: User not found
+[2025-12-16 21:56:48] [ERROR] Failed login attempt: User not found
+[2025-12-16 21:57:05] [ERROR] Failed login attempt: User not found
+[2025-12-16 21:57:25] [INFO] Login successful for user: [ADMIN] admin (ID: ADM01)
+[2025-12-16 21:57:43] [INFO] [ADMIN] admin (ID: ADM01) accessed SERVER_ROOM
+[2025-12-16 21:57:47] [INFO] [ADMIN] admin (ID: ADM01) accessed LAB
+[2025-12-16 21:57:49] [INFO] [ADMIN] admin (ID: ADM01) accessed OFFICE_FLOOR
+[2025-12-16 21:57:50] [INFO] [ADMIN] admin (ID: ADM01) accessed LOBBY
+[2025-12-16 21:57:52] [INFO] User logged out: [ADMIN] admin (ID: ADM01)
+[2025-12-16 21:58:50] [INFO] Login successful for user: [EMPLOYEE] emp (ID: EMP01)
+[2025-12-16 21:58:53] [WARN] [EMPLOYEE] emp (ID: EMP01) denied access to SERVER_ROOM
+[2025-12-16 21:58:53] [INFO] [EMPLOYEE] emp (ID: EMP01) accessed LAB
+[2025-12-16 21:58:54] [INFO] [EMPLOYEE] emp (ID: EMP01) accessed OFFICE_FLOOR
+[2025-12-16 21:58:55] [INFO] [EMPLOYEE] emp (ID: EMP01) accessed LOBBY
+[2025-12-16 21:58:56] [INFO] User logged out: [EMPLOYEE] emp (ID: EMP01)
+[2025-12-16 21:59:19] [INFO] Login successful for user: [VISITOR] guest (ID: VIS01, Badge: 2)
+[2025-12-16 21:59:21] [WARN] [VISITOR] guest (ID: VIS01, Badge: 2) denied access to SERVER_ROOM
+[2025-12-16 21:59:22] [WARN] [VISITOR] guest (ID: VIS01, Badge: 2) denied access to LAB
+[2025-12-16 21:59:22] [WARN] [VISITOR] guest (ID: VIS01, Badge: 2) denied access to OFFICE_FLOOR
+[2025-12-16 21:59:23] [INFO] [VISITOR] guest (ID: VIS01, Badge: 1) accessed LOBBY
+[2025-12-16 21:59:24] [INFO] User logged out: [VISITOR] guest (ID: VIS01, Badge: 1)
+[2025-12-16 22:06:16] [INFO] Login successful for user: [EMPLOYEE] emp (ID: EMP01)
+[2025-12-16 22:06:20] [INFO] Employee checked in: [EMPLOYEE] emp (ID: EMP01)
+[2025-12-16 22:06:22] [INFO] Employee checked out: [EMPLOYEE] emp (ID: EMP01)
+[2025-12-16 22:06:23] [INFO] User logged out: [EMPLOYEE] emp (ID: EMP01)
