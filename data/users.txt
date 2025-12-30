@@ -1,3 +1,6 @@
 ADM01,admin,admin123,ADMIN
 EMP01,emp,emp123,EMPLOYEE
 VIS01,guest,guest123,VISITOR,2
+
+EMP2,Balaji,emp123,EMPLOYEE,0
+Founder,Foundy,founder123,ADMIN,0

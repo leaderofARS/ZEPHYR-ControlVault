@@ -22,4 +22,24 @@
 [2025-12-16 22:06:16] [INFO] Login successful for user: [EMPLOYEE] emp (ID: EMP01)
 [2025-12-16 22:06:20] [INFO] Employee checked in: [EMPLOYEE] emp (ID: EMP01)
 [2025-12-16 22:06:22] [INFO] Employee checked out: [EMPLOYEE] emp (ID: EMP01)
-[2025-12-16 22:06:23] [INFO] User logged out: [EMPLOYEE] emp (ID: EMP01)
+[2025-12-16 22:06:23] [INFO] User logged out: [EMPLOYEE] emp (ID: EMP01)[2025-12-28 19:51:51] [INFO] Login successful for user: [ADMIN] admin (ID: ADM01)
+[2025-12-28 19:51:55] [INFO] [ADMIN] admin (ID: ADM01) accessed SERVER_ROOM
+[2025-12-28 19:52:06] [INFO] [ADMIN] admin (ID: ADM01) accessed LAB
+[2025-12-28 19:52:08] [INFO] [ADMIN] admin (ID: ADM01) accessed OFFICE_FLOOR
+[2025-12-28 19:52:10] [INFO] [ADMIN] admin (ID: ADM01) accessed LOBBY
+[2025-12-28 19:52:16] [INFO] User logged out: [ADMIN] admin (ID: ADM01)
+
+[2025-12-30 19:52:11] [WARN] Zone SERVER_ROOM updated to UNLOCKED
+[2025-12-30 19:52:13] [WARN] Zone SERVER_ROOM updated to LOCKED
+[2025-12-30 19:52:14] [WARN] Zone SERVER_ROOM updated to UNLOCKED
+[2025-12-30 19:52:20] [WARN] Zone LAB updated to LOCKED
+[2025-12-30 19:52:23] [WARN] Zone SERVER_ROOM updated to LOCKED
+[2025-12-30 19:56:24] [WARN] Zone LAB updated to UNLOCKED
+[2025-12-30 19:56:25] [WARN] Zone LAB updated to LOCKED
+[2025-12-30 19:56:26] [WARN] Zone SERVER_ROOM updated to UNLOCKED
+[2025-12-30 19:56:27] [WARN] Zone SERVER_ROOM updated to LOCKED
+[2025-12-30 20:03:12] [WARN] [VISITOR] guest (ID: VIS01) denied access to LAB (Zone is LOCKED)
+[2025-12-30 20:03:25] [WARN] [ADMIN] admin (ID: ADM01) denied access to SERVER_ROOM (Zone is LOCKED)
+[2025-12-30 20:03:29] [WARN] Zone SERVER_ROOM updated to UNLOCKED
+[2025-12-30 20:03:31] [WARN] Zone LAB updated to UNLOCKED
+[2025-12-30 20:03:42] [WARN] [EMPLOYEE] emp (ID: EMP01) denied access to SERVER_ROOM (Restricted Content)
