@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEPHYR ControlVault | Secure Access</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="background-grid"></div>
+    <div class="scan-line"></div>
+
+    <main class="app-container">
+        <!-- LOGIN SECTION -->
+        <section id="login-section" class="screen full-screen active-screen">
+            <div class="login-card glass-panel">
+                <div class="logo-area">
+                    <i class="fa-solid fa-shield-halved logo-icon"></i>
+                    <h1>ZEPHYR <span class="highlight">ControlVault</span></h1>
+                    <p class="subtitle">Identity & Access Management System</p>
+                </div>
+
+                <form id="login-form">
+                    <div class="input-group">
+                        <label for="username">User ID</label>
+                        <input type="text" id="username" placeholder="ADM01" required autocomplete="off">
+                        <div class="border-gradient"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Passcode</label>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                        <div class="border-gradient"></div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn primary-btn">
+                            <span class="btn-text">Authenticate</span>
+                            <span class="btn-glitch" aria-hidden="true">Authenticate</span>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="system-status">
+                    <span class="status-indicator online"></span> System Operational
+                </div>
+            </div>
+        </section>
+
+        <!-- DASHBOARD SECTION -->
+        <section id="dashboard-section" class="screen full-screen hidden-screen">
+            <header class="top-nav glass-panel">
+                <div class="nav-brand">
+                    <i class="fa-solid fa-shield-halved"></i> ZEPHYR
+                </div>
+                <div class="nav-user">
+                    <span id="user-display">ADMIN (ADM01)</span>
+                    <button id="logout-btn" class="icon-btn" title="Logout"><i
+                            class="fa-solid fa-power-off"></i></button>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Sidebar -->
+                <aside class="sidebar glass-panel">
+                    <nav class="side-menu">
+                        <a href="#" class="menu-item active" data-view="overview"><i class="fa-solid fa-chart-line"></i>
+                            Overview</a>
+                        <a href="#" class="menu-item" data-view="personnel"><i class="fa-solid fa-users"></i>
+                            Personnel</a>
+                        <a href="#" class="menu-item" data-view="zones"><i class="fa-solid fa-building-shield"></i>
+                            Zones</a>
+                        <a href="#" class="menu-item" data-view="logs"><i class="fa-solid fa-file-waveform"></i> Audit
+                            Logs</a>
+                        <div class="menu-spacer"></div>
+                        <a href="#" class="menu-item danger-item" id="btn-lockdown"><i class="fa-solid fa-lock"></i>
+                            Lockdown</a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="content-area">
+                    <!-- VIEW: OVERVIEW -->
+                    <div id="view-overview" class="view-section active-view">
+                        <div class="stats-row">
+                            <div class="stat-card glass-panel">
+                                <div class="stat-header">
+                                    <h3>Active Users</h3>
+                                    <i class="fa-solid fa-id-card-clip icon-faded"></i>
+                                </div>
+                                <div class="stat-value">12</div>
+                                <div class="stat-trend positive">On Campus</div>
+                            </div>
+                            <div class="stat-card glass-panel">
+                                <div class="stat-header">
+                                    <h3>Security Level</h3>
+                                    <i class="fa-solid fa-shield-cat icon-faded"></i>
+                                </div>
+                                <div class="stat-value text-gold" id="security-level-text">MODERATE</div>
+                                <div class="stat-trend">DEFCON 3</div>
+                            </div>
+                            <div class="stat-card glass-panel">
+                                <div class="stat-header">
+                                    <h3>Server Room</h3>
+                                    <i class="fa-solid fa-server icon-faded"></i>
+                                </div>
+                                <div class="stat-value text-green">SECURE</div>
+                                <div class="stat-trend">Last check: 1m ago</div>
+                            </div>
+                            <div class="stat-card glass-panel">
+                                <div class="stat-header">
+                                    <h3>System Load</h3>
+                                    <i class="fa-solid fa-microchip icon-faded"></i>
+                                </div>
+                                <div class="stat-value">24%</div>
+                                <div class="stat-trend">Optimal</div>
+                            </div>
+                        </div>
+
+                        <div class="card-row">
+                            <div class="recent-logs glass-panel">
+                                <div class="panel-header">
+                                    <h2>Live Access Logs</h2>
+                                    <span class="live-indicator"><span class="blink">●</span> LIVE</span>
+                                </div>
+                                <ul class="log-list" id="log-list-overview">
+                                    <li class="log-item info">
+                                        <span class="time">19:42:01</span>
+                                        <span class="log-content"><span class="tag tag-admin">ADMIN</span> Login
+                                            successful</span>
+                                    </li>
+                                    <li class="log-item warning">
+                                        <span class="time">19:41:55</span>
+                                        <span class="log-content"><span class="tag tag-system">SYSTEM</span> Door forced
+                                            open: SECTOR_4</span>
+                                    </li>
+                                    <li class="log-item error">
+                                        <span class="time">19:40:12</span>
+                                        <span class="log-content"><span class="tag tag-auth">AUTH</span> Access denied:
+                                            UNKNOWN_USER</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="zone-status glass-panel">
+                                <div class="panel-header">
+                                    <h2>Zone Control</h2>
+                                </div>
+                                <div class="zone-list">
+                                    <div class="zone-item">
+                                        <span class="zone-name">Lobby</span>
+                                        <span class="status-badge success">UNLOCKED</span>
+                                    </div>
+                                    <div class="zone-item">
+                                        <span class="zone-name">Office Floor</span>
+                                        <span class="status-badge success">UNLOCKED</span>
+                                    </div>
+                                    <div class="zone-item">
+                                        <span class="zone-name">Laboratory</span>
+                                        <span class="status-badge warning">RESTRICTED</span>
+                                    </div>
+                                    <div class="zone-item">
+                                        <span class="zone-name">Server Room</span>
+                                        <span class="status-badge danger">LOCKED</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VIEW: PERSONNEL -->
+                    <div id="view-personnel" class="view-section hidden-view">
+                        <div class="section-header">
+                            <h2>Authorized Personnel</h2>
+                            <button class="btn-small" id="btn-add-personnel"><i class="fa-solid fa-plus"></i> Add
+                                New</button>
+                        </div>
+                        <div class="glass-panel full-panel">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Role</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Populated by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- VIEW: ZONES -->
+                    <div id="view-zones" class="view-section hidden-view">
+                        <div class="section-header">
+                            <h2>Facility Zone Management</h2>
+                        </div>
+                        <div class="zone-grid-large" id="zone-grid">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- VIEW: LOGS -->
+                    <div id="view-logs" class="view-section hidden-view">
+                        <div class="section-header">
+                            <h2>Full Audit Trail</h2>
+                            <button class="btn-small"><i class="fa-solid fa-download"></i> Export</button>
+                        </div>
+                        <div class="glass-panel full-panel">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Timestamp</th>
+                                        <th>Level</th>
+                                        <th>Source</th>
+                                        <th>Message</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Populated by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- MODAL: ADD USER -->
+            <div id="modal-add-user" class="modal-overlay hidden-modal">
+                <div class="modal-card glass-panel">
+                    <div class="modal-header">
+                        <h2>Add Personnel</h2>
+                        <button class="icon-btn close-modal"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <form id="add-user-form">
+                        <div class="input-group">
+                            <label for="new-id">User ID</label>
+                            <input type="text" id="new-id" placeholder="e.g. EMP05" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="new-name">Full Name</label>
+                            <input type="text" id="new-name" placeholder="John Doe" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="new-pass">Default Password</label>
+                            <input type="password" id="new-pass" placeholder="******" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="new-role">Role</label>
+                            <!-- Styled select would be better but standard is functionally fine -->
+                            <select id="new-role" class="input-select" required>
+                                <option value="EMPLOYEE">EMPLOYEE</option>
+                                <option value="ADMIN">ADMIN</option>
+                                <option value="VISITOR">VISITOR</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn primary-btn">Register User</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Lockdown Overlay -->
+            <div id="lockdown-overlay" class="lockdown-overlay">
+                <div class="lockdown-alert">
+                    <i class="fa-solid fa-triangle-exclamation fa-beat"></i>
+                    <h1>EMERGENCY LOCKDOWN</h1>
+                    <p>ALL ZONES SECURED. AUTHENTICATION SUSPENDED.</p>
+                    <button id="btn-unlock-system" class="btn warning-btn">AUTHORIZE OVERRIDE</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
