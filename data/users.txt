@@ -4,3 +4,5 @@ VIS01,guest,guest123,VISITOR,2
 
 EMP2,Balaji,emp123,EMPLOYEE,0
 Founder,Foundy,founder123,ADMIN,0
+EMP03,John Doe,emp123,EMPLOYEE,0
+EMP20,Abhay,emp123,EMPLOYEE,0

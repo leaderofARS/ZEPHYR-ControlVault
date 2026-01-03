@@ -4,10 +4,13 @@ import users.*;
 import exceptions.AccessDeniedException;
 import exceptions.VisitorExpiredException;
 
+public class AccessManager {
+
     private FileHandler fileHandler = new FileHandler();
     private static final String ZONES_FILE = "data/zones.txt";
 
-    public AccessManager() {}
+    public AccessManager() {
+    }
 
     // Helper to check lock status from file
     private boolean isZoneLocked(AccessZone zone) {

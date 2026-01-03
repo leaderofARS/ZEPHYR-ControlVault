@@ -42,4 +42,11 @@
 [2025-12-30 20:03:25] [WARN] [ADMIN] admin (ID: ADM01) denied access to SERVER_ROOM (Zone is LOCKED)
 [2025-12-30 20:03:29] [WARN] Zone SERVER_ROOM updated to UNLOCKED
 [2025-12-30 20:03:31] [WARN] Zone LAB updated to UNLOCKED
-[2025-12-30 20:03:42] [WARN] [EMPLOYEE] emp (ID: EMP01) denied access to SERVER_ROOM (Restricted Content)
+[2025-12-30 20:03:42] [WARN] [EMPLOYEE] emp (ID: EMP01) denied access to SERVER_ROOM (Restricted Content)[2026-01-02 11:02:01] [INFO] Login successful for user: [EMPLOYEE] Balaji (ID: EMP2)
+[2026-01-02 11:02:09] [INFO] Employee checked in: [EMPLOYEE] Balaji (ID: EMP2)
+[2026-01-02 11:02:21] [INFO] [EMPLOYEE] Balaji (ID: EMP2) accessed OFFICE_FLOOR
+[2026-01-02 11:02:34] [INFO] [EMPLOYEE] Balaji (ID: EMP2) accessed LOBBY
+[2026-01-02 11:02:41] [INFO] User logged out: [EMPLOYEE] Balaji (ID: EMP2)
+
+[2026-01-02 11:22:51] [WARN] Zone SERVER_ROOM updated to LOCKED
+[2026-01-02 11:23:49] [WARN] Zone SERVER_ROOM updated to UNLOCKED
