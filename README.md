@@ -4,7 +4,7 @@ Zephyr ControlVault is a Java-based Identity and Access Management (IAM) system 
 
 The project demonstrates clean Object-Oriented Programming (OOP) principles, role-based access control (RBAC), user hierarchy modeling, exception handling, collections, and file-based persistence — making it a structured, real-world inspired mini-project.
 
-## 🚀 Project Overview
+##  Project Overview
 
 Zephyr ControlVault manages three categories of users:
 
@@ -18,15 +18,15 @@ All authentication events, access attempts, and attendance actions are recorded 
 
 This project goes beyond a basic CRUD system by simulating enterprise-style identity management and facility security enforcement.
 
-## 🔍 Key Features
+##  Key Features
 
-### ✅ 1. Multi-Role Authentication
+###  1. Multi-Role Authentication
 
 - Username/password-based login system
 - Role-based object creation (Admin / Employee / Visitor)
 - Invalid credentials handled via custom exceptions
 
-### ✅ 2. Role-Based Access Control (RBAC)
+###  2. Role-Based Access Control (RBAC)
 
 | Role     | Allowed Access Zones                  |
 |----------|---------------------------------------|
@@ -36,7 +36,7 @@ This project goes beyond a basic CRUD system by simulating enterprise-style iden
 
 Access violations raise domain-specific exceptions.
 
-### ✅ 3. Facility Zone Access
+###  3. Facility Zone Access
 
 Simulated facility zones:
 
@@ -47,14 +47,14 @@ Simulated facility zones:
 
 Access behavior is enforced centrally and executed polymorphically.
 
-### ✅ 4. Visitor Badge Management
+###  4. Visitor Badge Management
 
 - Visitors are issued temporary access badges
 - Badge validity decreases on each allowed access
 - Automatic expiry enforced
 - Expired badges raise `VisitorExpiredException`
 
-### ✅ 5. Automated Logging System
+###  5. Automated Logging System
 
 All system events are logged with timestamps and severity levels.
 
@@ -70,7 +70,7 @@ Sample log entries:
 [2025-12-16 21:57:05] [ERROR] Failed login attempt: User not found
 ```
 
-### ✅ 6. Employee Attendance Tracking
+###  6. Employee Attendance Tracking
 
 Employees can:
 - Check-in
@@ -87,7 +87,7 @@ Sample format:
 2025-12-16T22:12:04,EMP01,emp,CHECK_OUT
 ```
 
-### ✅ 7. File-Based Data Persistence
+###  7. File-Based Data Persistence
 
 Persistent storage is used for:
 - User records
@@ -96,13 +96,13 @@ Persistent storage is used for:
 
 This approach keeps the system lightweight while demonstrating real I/O handling.
 
-### ✅ 8. Clean Console Interface
+###  8. Clean Console Interface
 
 - Menu-driven interaction
 - Graceful error handling
 - Clear separation between UI and business logic
 
-## 🧩 Tech Stack
+##  Tech Stack
 
 ### Language
 - Java (JDK 8+)
@@ -115,7 +115,7 @@ This approach keeps the system lightweight while demonstrating real I/O handling
 - Java Time API (LocalDateTime)
 - Modular, layered system design
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 ZEPHYR-ControlVault/
@@ -149,7 +149,7 @@ ZEPHYR-ControlVault/
 └── README.md
 ```
 
-## 👥 Team Members & Responsibilities
+##  Team Members & Responsibilities
 
 ### Member A — ARS
 **Core Logic & OOP Architecture**
@@ -170,7 +170,7 @@ ZEPHYR-ControlVault/
 - Integrated system modules
 - Documented the project and collected screenshots
 
-## 💻 How to Run the Application
+##  How to Run the Application
 
 ### 1. Clone the Repository
 ```bash
@@ -187,7 +187,7 @@ javac -d out src/**/*.java
 java -cp out main.Main
 ```
 
-## 🧪 Sample Data
+##  Sample Data
 
 ### users.txt
 ```
@@ -196,7 +196,7 @@ EMP01,emp,emp123,EMPLOYEE
 VIS01,guest,guest123,VISITOR,2
 ```
 
-## 🧠 Learning Outcomes
+##  Learning Outcomes
 
 Through this project, we implemented:
 
@@ -208,7 +208,7 @@ Through this project, we implemented:
 - Clean separation between UI, logic, and data layers
 - Collaborative Git workflow with feature branches and PR reviews
 
-## ⚠️ Limitations
+##  Limitations
 
 - File-based storage instead of a database
 - Console-based UI (no GUI)
@@ -217,7 +217,7 @@ Through this project, we implemented:
 
 These choices were intentional to focus on OOP design and system architecture.
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 - Database integration (MySQL/PostgreSQL)
 - GUI using JavaFX or Swing
@@ -227,11 +227,11 @@ These choices were intentional to focus on OOP design and system architecture.
 - Advanced analytics and reporting
 - RFID / access-card simulation
 
-## 📝 License
+##  License
 
 MIT License
 
-## 🏁 Conclusion
+##  Conclusion
 
 Zephyr ControlVault demonstrates:
 
@@ -245,4 +245,4 @@ This project represents a professional-grade mini IAM system, significantly exce
 
 ---
 
-⭐ **If you found this project helpful, consider giving it a star on GitHub.**
+ **If you found this project helpful, consider giving it a star on GitHub.**
